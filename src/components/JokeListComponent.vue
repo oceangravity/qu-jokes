@@ -92,18 +92,21 @@ onMounted(() => {
   <div class="w-full flex-1 lg:ml-80 overflow-x-hidden h-full">
     <div class="flex flex-col p-10 md:px-24 md:pb-24 gap-8">
       <main class="w-full min-h-full">
+
         <div v-if="isLoading" class="flex flex-col gap-8">
           <div
             v-for="id in 10"
             :key="id"
-            class="bg-neutral-100 shadow rounded-lg p-6 md:p-14 h-52 animate-pulse"
+            class="relative bg-neutral-100 shadow rounded-lg p-6 md:p-14 h-52 animate-pulse"
           >
-            <p class="mb-2 bg-gray-300 w-96 h-7 rounded-md"></p>
-            <p class="mb-2 bg-gray-300 w-60 h-7 rounded-md"></p>
-            <p class="mb-2 bg-gray-300 w-36 h-7 rounded-md"></p>
+            <p class="mb-2 bg-gray-300 w-52 lg:w-96 h-7 rounded-md"></p>
+            <p class="mb-2 bg-gray-300 w-36 lg:w-60 h-7 rounded-md"></p>
+            <p class="mb-2 bg-gray-300 w-10 lg:w-36 h-7 rounded-md"></p>
           </div>
         </div>
+
         <div v-else-if="isError" class="text-center text-red-500">Error: {{ error }}</div>
+
         <div v-else class="flex flex-col gap-8">
           <div
             v-for="joke in jokes"

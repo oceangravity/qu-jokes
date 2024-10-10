@@ -23,7 +23,7 @@ onMounted(() => {
 
 <template>
   <aside
-    class="fixed flex-col top-0 flex-shrink-0 bg-[#0d2a4b] lg:transform-none leading-tight lg:w-80 flex lg:flex-col z-30 h-screen w-full transition-all"
+    class="fixed flex-col top-0 flex-shrink-0 bg-[#0d2a4b] lg:transform-none leading-tight lg:w-80 flex lg:flex-col z-30 h-screen w-full transition-all overflow-auto pb-20"
     :class="[ store.menuActive ? 'flex' : 'lg:flex transform -translate-y-full']"
   >
     <div class="mt-20 flex flex-col gap-12">
