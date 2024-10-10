@@ -73,13 +73,15 @@ const openDeleteModal = (id: string) => {
   showDeleteJokeModal.value = true
 }
 
-const addPoint = (id: string) => {
+const addPoint = async (id: string) => {
   const element = document.querySelector(`#add-point-button-${id}`)
 
   if (element) {
     element.classList.add('animate-bounce')
   }
-  incrementJokeRating(id)
+
+  await incrementJokeRating(id)
+
   refetch()
 
   setTimeout(() => {

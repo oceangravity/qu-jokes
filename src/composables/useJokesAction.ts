@@ -60,7 +60,7 @@ export default function useJokesAction() {
 
   const incrementJokeRating = async (id: string) => {
     try {
-      await request(API_URL, updateJokeRatingMutation, { id }) // Asegúrate de que el id se pase correctamente
+      await request(API_URL, updateJokeRatingMutation, { id })
     } catch (error) {
       console.error('Error incrementing joke rating:', error)
       throw error
