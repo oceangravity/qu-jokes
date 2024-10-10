@@ -48,14 +48,23 @@ watch([() => store.sortBy, () => store.sortOrder, () => store.activeCategory], (
   refetch()
 })
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
 const nextPage = () => {
   next()
   refetch()
+  scrollToTop()
 }
 
 const prevPage = () => {
   prev()
   refetch()
+  scrollToTop()
 }
 
 const openDeleteModal = (id: string) => {
@@ -111,7 +120,7 @@ onMounted(() => {
           <div
               v-for="joke in jokes"
               :key="joke._id"
-              class="relative bg-neutral-50 shadow rounded-lg p-6 md:p-14 h-52"
+              class="relative bg-neutral-50 shadow rounded-lg p-6 md:p-14 h-auto min-h-52"
           >
             <p class="text-lg font-semibold mb-2">{{ joke.setup }}</p>
             <p class="text-gray-600 mb-4">{{ joke.punchline }}</p>
