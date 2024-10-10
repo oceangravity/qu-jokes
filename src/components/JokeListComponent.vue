@@ -46,6 +46,7 @@ watch([() => store.sortBy, () => store.sortOrder, () => store.activeCategory], (
   currentPage.value = 1
   store.menuActive = false
   refetch()
+  scrollToTop()
 })
 
 const scrollToTop = () => {
