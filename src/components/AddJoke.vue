@@ -35,9 +35,9 @@ const canAdd = computed(() => punchline.value.length === 0 || setup.value.length
 <template>
   <transition>
     <div v-if="show" class="fixed top-0 left-0 w-screen h-screen z-50 bg-black/50">
-      <div class="flex min-h-full justify-center p-4 text-center items-center sm:p-0">
+      <div class="flex min-h-full justify-center p-4 text-center items-center">
         <div
-          class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl min-w-96 transition-all sm:my-8"
+          class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl w-full lg:max-w-96 lg:min-w-96 transition-all sm:my-8"
         >
           <div
             v-if="currentType"
